@@ -1,0 +1,13 @@
+<div class="app-list">
+  <button *ngFor="let app of apps" (click)="onAppSelect(app)">
+    <div class="icon"><img src="{{app.iconUrl}}"/></div>
+    <div class="details">
+      <h2>{{app.name}}</h2>
+      <div>{{app.description}}</div>
+      <span class="tag" *ngFor="let tag of app.tags">{{tag}}</span>
+    </div>
+    <div class="proceed">
+      <span class="icon" ></span>
+    </div>
+  </button>
+</div>

@@ -1,0 +1,13 @@
+<div id="sidebar">
+  <app-menu></app-menu>
+</div>
+<div id="content" *ngIf="app">
+  <h1><img src="{{app.iconUrl}}"/>{{app.name}}</h1>
+  <p>{{app.description}}</p>
+
+  <a class="create" [routerLink]="['/app', app.name, 'create']">Add New</a>
+  <h2>Configurations</h2>
+  <div>
+    <p>No configurations. Click 'Add New' above to get started with {{app.name}}!
+  </div>
+</div>

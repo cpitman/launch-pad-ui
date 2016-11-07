@@ -1,0 +1,10 @@
+<div id="sidebar" role="navigation">
+    <app-menu></app-menu>
+    <h2>Tags</h2>
+    <ul id="tag-filters">
+        <li *ngFor="let tag of tags"><a href="#">{{tag}}</a></li>
+    </ul>
+</div>
+<div id="content">
+    <app-app-list [apps]="apps" (appSelected)="addApp($event)" ></app-app-list>
+</div>

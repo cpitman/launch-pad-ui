@@ -1,0 +1,18 @@
+@import '~bootstrap-sass/assets/stylesheets/_bootstrap';
+
+#create {
+    @extend .btn;
+    @extend .btn-lg;
+    @extend .btn-primary;
+
+    float: right;
+    margin: 5px;
+}
+
+#cancel {
+    @extend .btn;
+    @extend .btn-lg;
+
+    float: right;
+    margin: 5px;
+}

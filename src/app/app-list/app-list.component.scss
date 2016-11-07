@@ -1,0 +1,55 @@
+@import '~bootstrap-sass/assets/stylesheets/_bootstrap';
+
+.app-list {
+    @extend .list-group;
+
+    button {
+        @extend .list-group-item;
+
+        .tag {
+            @extend .badge;
+        }
+
+        .icon {
+            float: left;
+            height: 120px;
+
+            img {
+                height: auto;
+                width: auto;
+                max-height: 120px;
+                max-width: 120px;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+        .details {
+            float: left;
+            padding-left: 10px;
+            max-width: 70%;
+        }
+        .proceed {
+            float: right;
+            height: 120px;
+            border-left: thin solid #ddd;
+
+            .icon {
+                //@extend .glyphicon; 
+                //@extend .glyphicon-chevron-right;
+                font-size: 20pt;
+                font-weight: 900;
+                border-left: 1px;
+                padding: 0px 5px;
+                color: #ddd;
+
+                position: relative;
+                top: 40%;
+                //transform: translateY(-50%);
+            }
+            .icon:before {
+                content: '>';
+            }
+        }
+    }
+}

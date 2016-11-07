@@ -1,0 +1,9 @@
+@import '~bootstrap-sass/assets/stylesheets/_bootstrap';
+
+#sidebar {
+    @extend .col-md-2;
+}
+
+#content {
+    @extend .col-md-10;
+}

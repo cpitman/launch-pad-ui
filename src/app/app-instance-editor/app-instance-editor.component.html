@@ -1,0 +1,64 @@
+<h1><img src="{{app.iconUrl}}"/>{{app.name}}</h1>
+<p>{{app.description}}</p>
+
+<form>
+  <div *ngIf="app.type == AppType.outgoing">
+    <div class="description">
+      <label for="channel-name">Channel Name</label>
+      <p>The channel to watch for messages. For example, "#general".</p>
+    </div>
+    <div class="input">
+      <input type="text" id="channel-name" />
+    </div>
+  </div>
+
+  <div *ngFor="let configItem of app.configDescription">
+    <div class="description">
+      <label htmlFor="app-{{configItem.name}}">{{configItem.displayName}}</label>
+      <p>{{configItem.description}}</p>
+    </div>
+    <div class="input">
+      <input *ngIf="configItem.type == ConfigItemType.text" type="text" id="app-{{configItem.name}}" />
+      <select *ngIf="configItem.type == ConfigItemType.select" id="app-{{configItem.name}}" >
+        <option *ngFor="let value of configItem.validValues" value="{{value}}">{{value}}</option>
+      </select>
+      <input *ngIf="configItem.type == ConfigItemType.boolean" type="checkbox" id="app-{{configItem.name}}" />
+      <div *ngIf="configItem.type == ConfigItemType.multiselect">
+        <span class="checkbox" *ngFor="let value of configItem.validValues; let i = index;">
+          <label><input type="checkbox" id="app-{{configItem.name}}-{{i}}" /> {{value}}</label>
+        </span>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div *ngIf="app.type == AppType.incoming">
+    <div class="description">
+      <label for="channel-name">Channel Name</label>
+      <p>The channel that messages should be posted to. For example, "#general".</p>
+    </div>
+    <div class="input">
+      <input type="text" id="channel-name" />
+    </div>
+  </div>
+  <div>
+    <div class="description">
+      <label for="alias">Alias (Optional)</label>
+      <p>The username that should be used for posted messages.</p>
+    </div>
+    <div class="input">
+      <input type="text" id="alias" />
+    </div>
+  </div>
+  <div>
+    <div class="description">
+      <label for="custom-avatar">Custom Avatar (Optional)</label>
+      <p>A URL for a custom avatar to use when posting messages.</p>
+    </div>
+    <div class="input">
+      <input type="url" id="custom-avatar" />
+    </div>
+  </div>
+</form>

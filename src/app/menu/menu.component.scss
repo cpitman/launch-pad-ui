@@ -1,0 +1,7 @@
+@import '~bootstrap-sass/assets/stylesheets/_bootstrap';
+
+#menu {
+    @extend .nav;
+    @extend .nav-pills;
+    @extend .nav-stacked;
+}

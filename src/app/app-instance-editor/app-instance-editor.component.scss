@@ -1,0 +1,38 @@
+@import '~bootstrap-sass/assets/stylesheets/_bootstrap';
+
+h1 > img {
+    max-width: 256px;
+    max-height: 120px;
+    width: auto;
+    height: auto;
+
+    padding-right: 10px;
+}
+
+form {
+    @extend .form-horizontal;
+
+    >div {
+        @extend .form-group;
+    }
+
+}
+
+.description {
+    @extend .col-md-3;
+
+    label {
+        @extend .control-label;
+    }
+    p {
+        @extend .help-block;
+    }
+}
+
+.input {
+    @extend .col-md-9;
+
+    input {
+        @extend .form-control;
+    }
+}
